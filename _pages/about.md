@@ -2,16 +2,16 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: PhD Researcher in Computer Science at <a href='https://distrinet.cs.kuleuven.be/'>DistriNet</a>, <a href='https://www.kuleuven.be/'>KU Leuven</a>
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic_color.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p>DistriNet, Department of Computer Science</p>
+    <p>KU Leuven</p>
+    <p>Leuven, Belgium</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -22,13 +22,17 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a PhD researcher in Computer Science at **KU Leuven** ([DistriNet](https://distrinet.cs.kuleuven.be/)). My research focuses on **AI-driven software security**, in particular **automated vulnerability detection in C/C++ source code** using pre-trained code models, contrastive learning, and large language models (LLMs).
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My work spans the full research pipeline:
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+- **Vulnerability data.** I build well-labeled vulnerability datasets from real-world CVEs and fix commits across 800+ GitHub repositories, including SZZ-traced vulnerability-contributing commits ([ICVul](https://github.com/Chaomeng-Lu/ICVul), MSR 2025).
+- **Models.** I design detection models that capture the subtle differences between vulnerable and patched code, such as [PatchCon](https://github.com/Chaomeng-Lu/PatchCon), a patch-aware supervised contrastive learning approach.
+- **Realistic evaluation.** I study how deep learning models and open-weight LLMs perform outside the lab, on newly disclosed Linux kernel and Chromium vulnerabilities (JSS 2026).
+
+I have published as first author in the _Journal of Systems and Software_, IEEE/ACM _MSR_, and the _IEEE Internet of Things Journal_, and I serve on the program committee of the MSR Data and Tool Showcase Track. Before my PhD, I received an M.Sc. in Cyberspace Security, where I worked on meta-learning for few-shot network intrusion detection.
+
+**I am open to research and engineering roles** in AI, software engineering, and cybersecurity, especially where research methods need to become reliable, production-ready solutions. Feel free to [get in touch](mailto:chaomeng.lu@outlook.com) or take a look at my [CV](/cv/).

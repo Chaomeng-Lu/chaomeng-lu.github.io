@@ -1,189 +1,216 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
-
+  name: Chaomeng Lu
+  label: PhD Researcher in Computer Science (AI for Software Security)
+  email: chaomeng.lu@outlook.com
+  location: Leuven, Belgium
+  website: https://chaomeng-lu.github.io
+  summary: >-
+    PhD researcher in Computer Science at KU Leuven (DistriNet), specializing in AI-driven software security and vulnerability detection. First author of
+    papers in the Journal of Systems and Software, IEEE/ACM MSR, and IEEE Internet of Things Journal; builder of open-source vulnerability datasets and
+    evaluation frameworks for deep learning models and LLMs. Seeking engineering or research roles in AI, software engineering, and cybersecurity, with
+    a focus on turning research methods into reliable, production-oriented solutions.
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
+      username: Chaomeng-Lu
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
-
+      username: chaomeng-lu-ba118124b
+    - network: Google Scholar
+      username: M9jv8xQAAAAJ
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+      - institution: KU Leuven
+        location: Leuven, Belgium
+        url: https://www.kuleuven.be/
+        area: Computer Science
+        studyType: PhD (expected)
+        degree: PhD
+        start_date: 2023-12
+        end_date: 2027-09
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+          - "Thesis topic: Deep Learning and LLM-based Automated Vulnerability Detection in Source Code"
+      - institution: North China University of Science and Technology
+        location: Hebei, China
+        area: Cyberspace Security
+        studyType: Master
+        degree: MSc
+        start_date: 2020-09
+        end_date: 2023-06
         highlights:
-          - Description 1.
-          - Description 2.
-
+          - "Thesis: Research on Network Intrusion Data Analysis Based on Meta-Learning"
+      - institution: North China Institute of Science and Technology
+        location: Hebei, China
+        area: Network Engineering
+        studyType: Bachelor
+        degree: BEng
+        start_date: 2016-09
+        end_date: 2020-06
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: DistriNet, KU Leuven
+        position: PhD Researcher
+        location: Leuven, Belgium
+        url: https://distrinet.cs.kuleuven.be/
+        start_date: 2023-12
+        end_date: present
         highlights:
-          - Relativity
-          - Description 2.
-
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+          - Research AI-driven vulnerability detection in C/C++ source code using pre-trained code models, contrastive learning, and LLMs.
+          - >-
+            Built vulnerability data pipelines (CVEs and fix commits from 800+ GitHub repositories, SZZ-traced contributing commits) and reproducible benchmarks
+            for deep learning models and LLMs.
+          - Published in JSS and MSR; released code and datasets as open-source artifacts; serve on the MSR program committee.
+      - company: ZF Group
+        position: Data Intern
+        location: Shanghai, China
+        start_date: 2023-05
+        end_date: 2023-08
         highlights:
-          - Description 1.
-          - Description 2.
-
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
-        highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
-
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
-
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
+          - Processed and cleaned internal business datasets to support reporting and operational analysis.
+          - Built data visualizations and dashboards to communicate trends, anomalies, and key metrics to stakeholders.
+          - Transformed raw data into structured, analysis-ready formats using Python, Excel, and VBA, improving reporting workflows.
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: "PatchCon: Patch-aware Weighted Supervised Contrastive Learning for Vulnerability Detection"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
+          - "**Chaomeng Lu**"
+          - Pooya Rostami Mazrae
+          - Bert Lagaisse
+        publisher: arXiv preprint (under review)
+        journal: arXiv preprint (under review)
+        date: 2026-11
+        releaseDate: 2026-11
+        url: https://arxiv.org/abs/2611.06583
+        summary: "**Chaomeng Lu**, Pooya Rostami Mazrae, Bert Lagaisse"
+      - title: "From Lab to Reality: A Practical Evaluation of Deep Learning Models and LLMs for Vulnerability Detection"
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
+          - "**Chaomeng Lu**"
+          - Bert Lagaisse
+        publisher: Journal of Systems and Software (accepted)
+        journal: Journal of Systems and Software (accepted)
+        date: 2026
+        releaseDate: 2026
+        url: https://arxiv.org/abs/2512.10485
+        summary: "**Chaomeng Lu**, Bert Lagaisse"
+      - title: A Comparative Analysis of Vulnerability Management in Machine Learning Projects
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
-
+          - Nelli Zurabyan
+          - "**Chaomeng Lu**"
+          - Bert Lagaisse
+        publisher: IEEE EuroS&P 2026 Workshops (DeMeSSAI), Lisbon
+        journal: IEEE EuroS&P 2026 Workshops (DeMeSSAI), Lisbon
+        date: 2026-07
+        releaseDate: 2026-07
+        summary: Nelli Zurabyan, **Chaomeng Lu**, Bert Lagaisse
+      - title: "ICVul: A Well-labeled C/C++ Vulnerability Dataset with Comprehensive Metadata and VCCs"
+        authors:
+          - "**Chaomeng Lu**"
+          - Tianyu Li
+          - Toon Dehaene
+          - Bert Lagaisse
+        publisher: IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)
+        journal: IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)
+        date: 2025
+        releaseDate: 2025
+        url: https://arxiv.org/abs/2505.08503
+        summary: "**Chaomeng Lu**, Tianyu Li, Toon Dehaene, Bert Lagaisse"
+      - title: A Multi-dimensional Visual Analytics Tool for the Security Posture of Open-source Software
+        authors:
+          - Tianyu Li
+          - "**Chaomeng Lu**"
+          - Bert Lagaisse
+        publisher: IEEE/ACM 3rd International Workshop on Software Vulnerability Management (SVM)
+        journal: IEEE/ACM 3rd International Workshop on Software Vulnerability Management (SVM)
+        date: 2025
+        releaseDate: 2025
+        summary: Tianyu Li, **Chaomeng Lu**, Bert Lagaisse
+      - title: A Few-shot Based Model-Agnostic Meta-Learning for Intrusion Detection in Security of Internet of Things
+        authors:
+          - "**Chaomeng Lu**"
+          - Xufeng Wang
+          - Aimin Yang
+          - Yikai Liu
+          - Ziao Dong
+        publisher: IEEE Internet of Things Journal, vol. 10, no. 24
+        journal: IEEE Internet of Things Journal, vol. 10, no. 24
+        date: 2023
+        releaseDate: 2023
+        doi: 10.1109/JIOT.2023.3283408
+        url: https://doi.org/10.1109/JIOT.2023.3283408
+        summary: "**Chaomeng Lu**, Xufeng Wang, Aimin Yang, Yikai Liu, Ziao Dong"
+      - title: "Application of Meta-learning in Cyberspace Security: A Survey"
+        authors:
+          - Aimin Yang
+          - "**Chaomeng Lu**"
+          - Jie Li
+          - Xiangdong Huang
+          - Tianhao Ji
+          - Xichang Li
+          - Yichao Sheng
+        publisher: Digital Communications and Networks, vol. 9, no. 1
+        journal: Digital Communications and Networks, vol. 9, no. 1
+        date: 2023
+        releaseDate: 2023
+        doi: 10.1016/j.dcan.2022.03.007
+        url: https://doi.org/10.1016/j.dcan.2022.03.007
+        summary: Aimin Yang, **Chaomeng Lu**, Jie Li, Xiangdong Huang, Tianhao Ji, Xichang Li, Yichao Sheng
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: PatchCon
+        url: https://github.com/Chaomeng-Lu/PatchCon
+        date: 2026
+        summary: Patch-aware weighted supervised contrastive learning for vulnerability detection (CodeBERT, PyTorch).
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
-
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+          - >-
+            Treats vulnerable–patched function pairs as weighted hard negatives; +58% pairwise accuracy on PairVul-Linux over the strongest reproduced baseline.
+      - name: ICVul dataset
+        url: https://github.com/Chaomeng-Lu/ICVul
+        date: 2025
+        summary: >-
+          Well-labeled C/C++ vulnerability dataset built from real-world CVEs and fix commits across 800+ GitHub repositories, with SZZ-traced vulnerability-contributing
+          commits.
+      - name: Self-hosted MLflow Tracking Platform on Azure
+        summary: >-
+          Deployed a self-hosted MLflow Tracking Server on an Azure Ubuntu VM with Nginx reverse proxy, Basic Auth, systemd service management, and artifact
+          tracking for centralized experiment management.
+    Skills:
+      - name: Programming
+        icon: fa-solid fa-code
+        keywords: Python, C/C++, Java, SQL, Bash
+      - name: Machine Learning
+        icon: fa-solid fa-brain
+        keywords: >-
+          PyTorch, TensorFlow, Transformers, vLLM, scikit-learn, LLMs, Pre-trained Code Models (CodeBERT), Contrastive Learning, Meta-Learning, NLP, HPC
+      - name: Security
+        icon: fa-solid fa-shield-halved
+        keywords: Software Vulnerability Detection, Static Code Analysis, Software Security, Network Intrusion Detection
+      - name: Data Engineering
+        icon: fa-solid fa-database
+        keywords: Pandas, NumPy, Data Cleaning and Labeling, Mining Software Repositories, Statistical Analysis, Data Visualization
+      - name: MLOps / Cloud
+        icon: fa-solid fa-cloud
+        keywords: MLflow, Docker, Git, Linux, Azure, MySQL, PostgreSQL, Nginx
+    Languages:
+      - name: English
+        summary: Full professional proficiency
+      - name: Chinese
+        summary: Native proficiency
+      - name: Dutch
+        summary: Elementary proficiency
+    Professional Service:
+      - bullet: >-
+          Program Committee Member, [MSR 2027 Data and Tool Showcase Track](https://2027.msrconf.org/committee/msr-2027-data-and-tool-showcase-track-data-and-tool-showcase-track---program-committee)
+          (2026)
+      - bullet: >-
+          Program Committee Member, [MSR 2026 Data and Tool Showcase Track](https://2026.msrconf.org/committee/msr-2026-data-and-tool-showcase-track-data-and-tool-showcase-track---program-committee)
+          (2025)
+    Awards:
+      - title: Second Prize, Network and Information Security Technology Competition (CTF)
+        awarder: Hebei Department of Education
+        date: 2021
+      - title: Third Prize, "Blue Bridge Cup" National Software Professionals Design Contest
+        date: 2018
+    Academic Activities:
+      - bullet: Attendee, 11th IEEE European Symposium on Security and Privacy (EuroS&P), Lisbon, Jul 2026
+      - bullet: Attendee, 47th IEEE/ACM International Conference on Software Engineering (ICSE), Ottawa, Apr–May 2025
+      - bullet: Attendee, 22nd International Conference on Mining Software Repositories (MSR), Ottawa, Apr–May 2025
+      - bullet: Participant, Summer School on Security and Privacy in the Age of AI, KU Leuven, Sep 2024
+    Interests:
+      - name: Hobbies
+        icon: fa-solid fa-person-running
+        keywords: Running, hiking, cycling, guitar, music

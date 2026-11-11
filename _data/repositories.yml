@@ -1,14 +1,10 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Chaomeng-Lu
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - Chaomeng-Lu/PatchCon
+  - Chaomeng-Lu/ICVul
+  - Chaomeng-Lu/A-Practical-Evaluation-of-Deep-Learning-Models-and-LLMs-for-Vulnerability-Detection
+  - Chaomeng-Lu/MAML-CNN-FSIDS-IoT

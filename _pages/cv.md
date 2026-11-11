@@ -3,10 +3,10 @@ layout: cv
 permalink: /cv/
 title: CV
 nav: true
-nav_order: 5
-cv_pdf: /assets/pdf/example_pdf.pdf # you can also use external links here
+nav_order: 4
+cv_pdf: /assets/pdf/Chaomeng_Lu_CV.pdf # you can also use external links here
 cv_format: rendercv # options: rendercv, jsonresume
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
+description: PhD researcher in AI for software security. Download the PDF version with the icon on the right.
 toc:
   sidebar: left
 ---

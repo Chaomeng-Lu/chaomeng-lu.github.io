@@ -1,9 +1,27 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"arXiv":
+  url: https://arxiv.org/
+  color: "#b31b1b"
+
+"JSS":
+  url: https://www.sciencedirect.com/journal/journal-of-systems-and-software
+  color: "#e9711c"
+
+"MSR":
+  url: https://www.msrconf.org/
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"IoT-J":
+  url: https://ieee-iotj.org/
+  color: "#00629b"
 
-"Vision":
+"DCN":
+  url: https://www.sciencedirect.com/journal/digital-communications-and-networks
   color: "#009f36"
+
+"EuroS&PW":
+  url: https://eurosp2026.ieee-security.org/workshops.html
+  color: "#6f42c1"
+
+"SVM":
+  url: https://conf.researchr.org/home/icse-2025/svm-2025
+  color: "#5a6268"
