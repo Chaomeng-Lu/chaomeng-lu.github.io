@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://chaomenglu.github.io/sitemap.xml
+Sitemap: https://chaomeng-lu.github.io/sitemap.xml
