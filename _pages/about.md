@@ -26,21 +26,6 @@ latest_posts:
 ---
 
 <section class="hero">
-  {%- comment -%} Scholar metrics, computed at build time from _data/citations.yml (refreshed by the update-citations workflow). {%- endcomment -%}
-  {%- assign cites = "" | split: "" -%}
-  {%- assign total_citations = 0 -%}
-  {%- for paper in site.data.citations.papers -%}
-    {%- assign c = paper[1].citations | plus: 0 -%}
-    {%- assign cites = cites | push: c -%}
-    {%- assign total_citations = total_citations | plus: c -%}
-  {%- endfor -%}
-  {%- assign cites = cites | sort | reverse -%}
-  {%- assign h_index = 0 -%}
-  {%- assign i10_index = 0 -%}
-  {%- for c in cites -%}
-    {%- if c >= forloop.index -%}{%- assign h_index = forloop.index -%}{%- endif -%}
-    {%- if c >= 10 -%}{%- assign i10_index = i10_index | plus: 1 -%}{%- endif -%}
-  {%- endfor -%}
   <p class="hero-kicker">// Hi, I'm Chaomeng</p>
   <p class="hero-title">AI for Finding Vulnerabilities in Real&#8209;World Code<span class="cursor" aria-hidden="true">_</span></p>
   <div class="hero-pills">
@@ -50,13 +35,6 @@ latest_posts:
     <a class="pill" href="https://github.com/{{ site.data.socials.github_username }}"><i class="fa-brands fa-github"></i> GitHub</a>
     <a class="pill pill-outline" href="mailto:{{ site.data.socials.email }}"><i class="fa-solid fa-envelope"></i> Get in touch</a>
   </div>
-  <div class="stats">
-    <div class="stat"><span class="stat-value">{{ site.data.citations.papers.size }}</span><span class="stat-label">papers</span></div>
-    <div class="stat"><span class="stat-value">{{ total_citations }}</span><span class="stat-label">citations</span></div>
-    <div class="stat"><span class="stat-value">{{ h_index }}</span><span class="stat-label">h-index</span></div>
-    <div class="stat"><span class="stat-value">{{ i10_index }}</span><span class="stat-label">i10-index</span></div>
-  </div>
-  <p class="stats-source">Google Scholar · updated {{ site.data.citations.metadata.last_updated | date: "%b %-d, %Y" }}</p>
 </section>
 
 I am a PhD researcher in Computer Science at **KU Leuven** ([DistriNet](https://distrinet.cs.kuleuven.be/)). My research focuses on **AI-driven software security**, in particular **automated vulnerability detection in C/C++ source code** using pre-trained code models, contrastive learning, and large language models (LLMs). My work spans the full research pipeline:

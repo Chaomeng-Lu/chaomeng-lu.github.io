@@ -613,51 +613,6 @@ footer.sticky-bottom {
     var(--cl-gradient) border-box;
 }
 
-.stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
-  margin-top: 1.75rem;
-}
-
-@media (min-width: 576px) {
-  .stats {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-.stat {
-  padding: 0.9rem 1.1rem;
-  background-color: var(--cl-panel);
-  border: 1px solid var(--cl-panel-border);
-  border-radius: var(--cl-radius);
-}
-
-.stat-value {
-  display: block;
-  font-family: var(--cl-font-display);
-  font-size: 1.75rem;
-  font-weight: 600;
-  line-height: 1.1;
-  color: var(--global-text-color);
-}
-
-.stat-label,
-.stats-source {
-  font-family: var(--cl-font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-  color: var(--global-text-color-light) !important;
-}
-
-.stat-label {
-  text-transform: uppercase;
-}
-
-.stats-source {
-  margin: 0.5rem 0 0;
-}
-
 // --- About page: research feature cards ----------------------------------------------
 
 .features {
