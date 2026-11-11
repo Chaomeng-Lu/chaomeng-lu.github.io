@@ -93,7 +93,13 @@ jobs:
           value: ${{ github.repository }}
       - name: Install and Build 🔧
         run: |
-          sudo apt-get update && sudo apt-get install -y imagemagick
+          # ImageMagick is often preinstalled on the runner; when it is not, retry flaky
+          # mirrors with a timeout instead of hanging (a stalled apt-get failed a deploy).
+          if ! command -v convert >/dev/null && ! command -v magick >/dev/null; then
+            APT_OPTS="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30"
+            sudo apt-get $APT_OPTS update
+            sudo apt-get $APT_OPTS install -y --no-install-recommends imagemagick
+          fi
           pip3 install --upgrade nbconvert
           export JEKYLL_ENV=production
           bundle exec jekyll build
