@@ -154,7 +154,8 @@
         <div class="cl-social">{% social_links %}</div>
         <p class="cl-meta">
           {% if site.data.socials.email %}
-            <span>{{ site.data.socials.email | al_email_obfuscate }}</span><br>
+            {% comment %} al_email_obfuscate only acts when protect_email is on, so spell it out here. {% endcomment %}
+            <span>{{ site.data.socials.email | replace: '@', ' [at] ' | replace: '.', ' [dot] ' }}</span><br>
           {% endif %}
           <span
             >Last update: <strong>{{ site.time | date: '%b %-d, %Y' }}</strong></span
