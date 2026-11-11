@@ -1,0 +1,297 @@
+// Personal design layer for chaomeng-lu.github.io
+// -----------------------------------------------------------------------------
+// "Ink and paper": warm paper background, ink text, and a cinnabar accent that
+// matches the 卢 name seal used as the favicon. Loaded last from assets/css/main.scss,
+// so these rules override the al_folio_core theme tokens without copying any layouts.
+// Fonts are loaded through `third_party_libraries.google_fonts` in _config.yml.
+
+// --- Tokens -------------------------------------------------------------------
+
+:root {
+  --cl-font-serif: "Fraunces", "Noto Serif SC", Georgia, "Times New Roman", serif;
+  --cl-font-sans: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --cl-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --cl-accent-soft: rgba(179, 64, 42, 0.07);
+  --cl-accent-line: rgba(179, 64, 42, 0.35);
+  --cl-selection: rgba(179, 64, 42, 0.18);
+  --cl-shadow: 0 1px 2px rgba(31, 35, 40, 0.05), 0 10px 28px rgba(31, 35, 40, 0.07);
+  --cl-radius: 12px;
+
+  --global-bg-color: #faf8f3;
+  --global-card-bg-color: #fffdf9;
+  --global-text-color: #1f2328;
+  --global-text-color-light: #6b6a65;
+  --global-theme-color: #b3402a;
+  --global-hover-color: #8f2f1d;
+  --global-hover-text-color: #ffffff;
+  --global-divider-color: rgba(31, 35, 40, 0.12);
+  --global-code-bg-color: rgba(179, 64, 42, 0.06);
+  --global-footer-bg-color: #faf8f3;
+  --global-footer-text-color: #6b6a65;
+  --global-footer-link-color: #1f2328;
+}
+
+html[data-theme="dark"] {
+  --cl-accent-soft: rgba(232, 128, 106, 0.08);
+  --cl-accent-line: rgba(232, 128, 106, 0.4);
+  --cl-selection: rgba(232, 128, 106, 0.25);
+  --cl-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.35);
+
+  --global-bg-color: #141518;
+  --global-card-bg-color: #1b1d21;
+  --global-text-color: #e7e3da;
+  --global-text-color-light: #9b978e;
+  --global-theme-color: #e8806a;
+  --global-hover-color: #f09a86;
+  --global-hover-text-color: #141518;
+  --global-divider-color: rgba(231, 227, 218, 0.14);
+  --global-code-bg-color: #23262b;
+  --global-footer-bg-color: #141518;
+  --global-footer-text-color: #9b978e;
+  --global-footer-link-color: #e7e3da;
+}
+
+// --- Base typography ------------------------------------------------------------
+
+body {
+  font-family: var(--cl-font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  background-color: var(--global-bg-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+// The theme sets body text to weight 300, which makes "bolder" render as regular.
+strong,
+b {
+  font-weight: 600;
+}
+
+::selection {
+  background-color: var(--cl-selection);
+}
+
+h1,
+h2,
+h3,
+h4,
+.post-title,
+.card-title,
+.navbar-brand.title {
+  font-family: var(--cl-font-serif);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.post-header .post-title {
+  font-size: clamp(2.1rem, 4.5vw, 2.9rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
+}
+
+.post-header .desc {
+  color: var(--global-text-color-light);
+  font-size: 1.05rem;
+}
+
+// Prose links: quiet underline in the accent colour, solid on hover.
+article p a,
+.news td a,
+.post-header .desc a {
+  text-decoration: underline;
+  text-decoration-color: var(--cl-accent-line);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+article p a:hover,
+.news td a:hover,
+.post-header .desc a:hover {
+  text-decoration-color: currentColor;
+}
+
+// --- Navigation and footer ------------------------------------------------------
+
+#navbar {
+  background-color: var(--global-bg-color);
+  background-color: color-mix(in srgb, var(--global-bg-color) 86%, transparent);
+  backdrop-filter: saturate(1.3) blur(10px);
+  -webkit-backdrop-filter: saturate(1.3) blur(10px);
+  border-bottom: 1px solid var(--global-divider-color);
+  box-shadow: none;
+}
+
+#navbar .nav-link {
+  letter-spacing: 0.01em;
+}
+
+footer.fixed-bottom,
+footer.sticky-bottom {
+  background-color: var(--global-bg-color);
+  background-color: color-mix(in srgb, var(--global-bg-color) 90%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid var(--global-divider-color);
+}
+
+// --- About page -----------------------------------------------------------------
+
+// Section labels ("news", "selected publications", project categories, publication years):
+// small mono caps over a hairline.
+.post > article > h2,
+.projects h2.category,
+.publications h2.bibliography {
+  font-family: var(--cl-font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--global-text-color-light);
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 1.1rem;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.projects h2.category {
+  border-top: none;
+  border-bottom: 1px solid var(--global-divider-color);
+  padding-top: 0;
+  padding-bottom: 0.6rem;
+}
+
+.post > article > h2 a {
+  color: inherit;
+}
+
+.post > article > h2 a:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+}
+
+.profile img {
+  border-radius: var(--cl-radius);
+  box-shadow: var(--cl-shadow);
+}
+
+.profile .more-info {
+  font-family: var(--cl-font-mono);
+  font-size: 0.78rem;
+  color: var(--global-text-color-light);
+  margin-top: 0.75rem;
+}
+
+.profile .more-info p {
+  display: block;
+  color: inherit;
+}
+
+.news table th {
+  font-family: var(--cl-font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--global-text-color-light);
+  white-space: nowrap;
+  vertical-align: top;
+  padding-top: 0.6rem;
+  padding-right: 1.25rem;
+}
+
+.news table td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+// "What I value" block, signed with the name seal.
+.values {
+  margin: 2.25rem 0 0.5rem;
+  padding: 1.25rem 1.5rem 0.9rem;
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 0 var(--cl-radius) var(--cl-radius) 0;
+  background-color: var(--cl-accent-soft);
+}
+
+.values .values-label {
+  font-family: var(--cl-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--global-theme-color);
+  margin-bottom: 0.6rem;
+}
+
+.values p {
+  font-family: var(--cl-font-serif);
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+.values .values-sign {
+  margin: -0.4rem 0 0;
+}
+
+.values .seal {
+  display: block;
+  width: 34px;
+  height: 34px;
+  margin-left: auto;
+  transform: rotate(-4deg);
+}
+
+// --- Publications ------------------------------------------------------------------
+
+.publications ol.bibliography li .title {
+  font-family: var(--cl-font-serif);
+  font-size: 1.04rem;
+  font-weight: 600;
+}
+
+.publications ol.bibliography li .abbr abbr {
+  font-family: var(--cl-font-mono);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  border-radius: 6px;
+}
+
+// --- Project cards -----------------------------------------------------------------
+
+.projects .card {
+  overflow: hidden;
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: var(--cl-radius);
+  box-shadow: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.projects .card:hover {
+  transform: translateY(-2px);
+  border-color: var(--cl-accent-line);
+  box-shadow: var(--cl-shadow);
+}
+
+.projects .card .card-img-top {
+  border-bottom: 1px solid var(--global-divider-color);
+  background-color: #ffffff;
+}
+
+.projects .card .card-title {
+  font-size: 1.3rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects .card,
+  .projects .card:hover {
+    transition: none;
+    transform: none;
+  }
+}
