@@ -1,3 +1,31 @@
 metadata:
   last_updated: '2026-11-11'
-papers: {}
+papers:
+  M9jv8xQAAAAJ:Tyk-4Ss8FVUC:
+    citations: 1
+    title: A multi-dimensional visual analytics tool for the security posture of open-source software
+    year: '2025'
+  M9jv8xQAAAAJ:UeHWp8X0CEIC:
+    citations: 83
+    title: 'Application of meta-learning in cyberspace security: A survey'
+    year: '2023'
+  M9jv8xQAAAAJ:Y0pCki6q_DkC:
+    citations: 5
+    title: 'From Lab to Reality: A Practical Evaluation of Deep Learning Models and LLMs for Vulnerability Detection'
+    year: '2025'
+  M9jv8xQAAAAJ:YsMSGLbcyi4C:
+    citations: 0
+    title: A Comparative Analysis of Vulnerability Management in Machine Learning Projects
+    year: '2026'
+  M9jv8xQAAAAJ:eQOLeE2rZwMC:
+    citations: 0
+    title: 'PatchCon: Patch-aware Weighted Supervised Contrastive Learning for Vulnerability Detection'
+    year: '2026'
+  M9jv8xQAAAAJ:qjMakFHDy7sC:
+    citations: 111
+    title: A few-shot-based model-agnostic meta-learning for intrusion detection in security of internet of things
+    year: '2023'
+  M9jv8xQAAAAJ:zYLM7Y9cAGgC:
+    citations: 16
+    title: 'ICVul: a well-labeled C/C++ vulnerability dataset with comprehensive metadata and VCCS'
+    year: '2025'
