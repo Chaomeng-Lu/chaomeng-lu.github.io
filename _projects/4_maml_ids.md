@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Few-shot IoT Intrusion Detection
+title: Few-Shot IoT Intrusion Detection
 description: Model-agnostic meta-learning for detecting new IoT attack types from a few labeled samples.
 img: assets/img/projects/maml_ids.png
 importance: 4

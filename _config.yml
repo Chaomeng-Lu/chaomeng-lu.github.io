@@ -14,12 +14,18 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: Chaomeng Lu, vulnerability detection, software security, deep learning, large language models, code models, KU Leuven, DistriNet
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: favicon.svg # 卢 name seal (vector); the emoji form, e.g. 🛡️, is also accepted
+icon: favicon.svg # angular "L" mark (vector); an emoji such as 🛡️ is also accepted
 apple_touch_icon: apple-touch-icon.png # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
 
 url: https://chaomeng-lu.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root (user site)
 last_updated: true # set to true if you want to display last updated in the footer
+# Identity sidebar (local _includes/header.liquid); leave a key empty to hide that line
+sidebar_photo: prof_pic_color.jpg # image name in /assets/img/
+sidebar_role: PhD Researcher · KU Leuven
+sidebar_tagline: AI for Software Security
+sidebar_status: open to research & engineering roles
+sidebar_quote: "No single metric can measure what someone is worth."
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 back_to_top: true # set to false to disable the back to top button
 
@@ -533,7 +539,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=JetBrains+Mono:wght@400..700&family=Space+Grotesk:wght@400..700&family=Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:
