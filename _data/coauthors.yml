@@ -1,7 +1,10 @@
 # Map co-author last names (lowercase) to their first-name variants and homepages,
-# so their names are linked on the publications page. Example:
-#
-# "lagaisse":
-#   - firstname: ["Bert", "B."]
-#     url: https://...
-{}
+# so their names are linked on the publications page.
+
+"lagaisse":
+  - firstname: ["Bert", "B."]
+    url: https://distrinet.cs.kuleuven.be/people/BertLagaisse
+
+"rostami mazrae":
+  - firstname: ["Pooya", "P."]
+    url: https://distrinet.cs.kuleuven.be/people/PooyaRostamiMazrae

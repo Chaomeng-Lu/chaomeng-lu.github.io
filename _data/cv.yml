@@ -108,7 +108,8 @@ cv:
         journal: IEEE/ACM 22nd International Conference on Mining Software Repositories (MSR)
         date: 2025
         releaseDate: 2025
-        url: https://arxiv.org/abs/2505.08503
+        doi: 10.1109/MSR66628.2025.00034
+        url: https://doi.org/10.1109/MSR66628.2025.00034
         summary: "**Chaomeng Lu**, Tianyu Li, Toon Dehaene, Bert Lagaisse"
       - title: A Multi-dimensional Visual Analytics Tool for the Security Posture of Open-source Software
         authors:
@@ -119,6 +120,8 @@ cv:
         journal: IEEE/ACM 3rd International Workshop on Software Vulnerability Management (SVM)
         date: 2025
         releaseDate: 2025
+        doi: 10.1109/SVM66695.2025.00007
+        url: https://doi.org/10.1109/SVM66695.2025.00007
         summary: Tianyu Li, **Chaomeng Lu**, Bert Lagaisse
       - title: A Few-shot Based Model-Agnostic Meta-Learning for Intrusion Detection in Security of Internet of Things
         authors:
@@ -200,10 +203,12 @@ cv:
           Program Committee Member, [MSR 2026 Data and Tool Showcase Track](https://2026.msrconf.org/committee/msr-2026-data-and-tool-showcase-track-data-and-tool-showcase-track---program-committee)
           (2025)
     Awards:
-      - title: Second Prize, Network and Information Security Technology Competition (CTF)
+      - name: Second Prize, Network and Information Security Technology Competition (CTF)
+        title: Second Prize, Network and Information Security Technology Competition (CTF)
         awarder: Hebei Department of Education
         date: 2021
-      - title: Third Prize, "Blue Bridge Cup" National Software Professionals Design Contest
+      - name: Third Prize, "Blue Bridge Cup" National Software Professionals Design Contest
+        title: Third Prize, "Blue Bridge Cup" National Software Professionals Design Contest
         date: 2018
     Academic Activities:
       - bullet: Attendee, 11th IEEE European Symposium on Security and Privacy (EuroS&P), Lisbon, Jul 2026
