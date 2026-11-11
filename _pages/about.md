@@ -94,3 +94,10 @@ I am a PhD researcher in Computer Science at **KU Leuven** ([DistriNet](https://
 I have published as first author in the _Journal of Systems and Software_, IEEE/ACM _MSR_, and the _IEEE Internet of Things Journal_, and I serve on the program committee of the MSR Data and Tool Showcase Track. Before my PhD, I received an M.Sc. in Cyberspace Security, where I worked on meta-learning for few-shot network intrusion detection.
 
 **I am open to research and engineering roles** in AI, software engineering, and cybersecurity, especially where research methods need to become reliable, production-ready solutions. Feel free to [get in touch](mailto:chaomeng.lu@outlook.com) or take a look at my [CV](/cv/).
+
+<div class="values" markdown="1">
+<p class="values-label">What I Value</p>
+
+I am a humanist at heart. I believe every person is many things at once, and that no single metric, ranking, or comparison can measure what someone is worth. I value freedom, openness, and inclusion, and I would rather a community make room for different people and paths than optimize everyone toward the same narrow idea of usefulness.
+
+</div>

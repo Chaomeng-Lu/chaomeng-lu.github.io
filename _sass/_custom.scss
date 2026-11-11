@@ -725,7 +725,7 @@ footer.sticky-bottom {
   margin-bottom: 0.4rem;
 }
 
-// --- Modules: news and selected publications ------------------------------------------
+// --- Modules: news, selected publications, values ------------------------------------
 
 .post > article > .news,
 .post > article > .publications {
@@ -811,6 +811,29 @@ footer.sticky-bottom {
 
 .news table tr + tr {
   border-top: 1px solid var(--global-divider-color);
+}
+
+// "What I value": card with a gradient border.
+.values {
+  margin: 2rem 0 0.5rem;
+  padding: 1.4rem 1.5rem 0.6rem;
+  border: 1.5px solid transparent;
+  border-radius: 16px;
+  background:
+    linear-gradient(var(--global-bg-color), var(--global-bg-color)) padding-box,
+    var(--cl-gradient) border-box;
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.08);
+}
+
+.values .values-label {
+  margin-bottom: 0.6rem;
+  font-family: var(--cl-font-mono);
+  font-size: 0.8rem;
+  color: var(--global-theme-color) !important;
+}
+
+.values .values-label::before {
+  content: "// ";
 }
 
 // --- Publications ------------------------------------------------------------------
