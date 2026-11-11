@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Self-hosted MLflow on Azure
+title: Self-Hosted MLflow on Azure
 description: A self-hosted MLflow tracking platform for centralized experiment management.
 img: assets/img/projects/mlflow_azure.png
 importance: 5

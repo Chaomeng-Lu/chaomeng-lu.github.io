@@ -1,57 +1,77 @@
 // Personal design layer for chaomeng-lu.github.io
 // -----------------------------------------------------------------------------
-// "Ink and paper": warm paper background, ink text, and a cinnabar accent that
-// matches the 卢 name seal used as the favicon. Loaded last from assets/css/main.scss,
-// so these rules override the al_folio_core theme tokens without copying any layouts.
-// Fonts are loaded through `third_party_libraries.google_fonts` in _config.yml.
+// Layout: a dark identity sidebar on the left (photo, name, links, status), a slim
+// tab bar on top, and content built from rounded card modules. Palette: white/ink
+// with a teal accent in light mode, neon cyan in dark mode, with a few cyberpunk
+// touches (angular "L" mark, mono "//" labels, terminal cursor, grid texture, glow).
+// Loaded last from assets/css/main.scss; the sidebar markup is in the local
+// _includes/header.liquid override and its text in the sidebar_* keys of _config.yml.
 
 // --- Tokens -------------------------------------------------------------------
 
 :root {
-  --cl-font-serif: "Fraunces", "Noto Serif SC", Georgia, "Times New Roman", serif;
-  --cl-font-sans: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --cl-font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --cl-accent-soft: rgba(179, 64, 42, 0.07);
-  --cl-accent-line: rgba(179, 64, 42, 0.35);
-  --cl-selection: rgba(179, 64, 42, 0.18);
-  --cl-shadow: 0 1px 2px rgba(31, 35, 40, 0.05), 0 10px 28px rgba(31, 35, 40, 0.07);
-  --cl-radius: 12px;
+  --cl-font-display: "Space Grotesk", "Inter", -apple-system, "Segoe UI", sans-serif;
+  --cl-font-sans: "Inter", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --cl-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  --global-bg-color: #faf8f3;
-  --global-card-bg-color: #fffdf9;
-  --global-text-color: #1f2328;
-  --global-text-color-light: #6b6a65;
-  --global-theme-color: #b3402a;
-  --global-hover-color: #8f2f1d;
+  --cl-sidebar-w: 300px;
+  --cl-radius: 14px;
+  --cl-radius-sm: 8px;
+
+  // Sidebar is dark in both themes.
+  --cl-sb-bg: #0b0f12;
+  --cl-sb-tile: #141b20;
+  --cl-sb-text: #e3ecee;
+  --cl-sb-muted: #8a9ca1;
+  --cl-sb-accent: #2ee6d6;
+  --cl-sb-border: rgba(46, 230, 214, 0.14);
+  --cl-sb-grid: rgba(46, 230, 214, 0.05);
+
+  --cl-gradient: linear-gradient(135deg, #14b8a6, #22d3ee 55%, #3b82f6);
+  --cl-panel: #f4f7f8;
+  --cl-panel-border: transparent;
+  --cl-accent-soft: rgba(10, 124, 114, 0.09);
+  --cl-accent-line: rgba(10, 124, 114, 0.4);
+  --cl-selection: rgba(10, 124, 114, 0.18);
+  --cl-lift: 0 12px 30px rgba(15, 26, 30, 0.1);
+
+  --global-bg-color: #ffffff;
+  --global-card-bg-color: #f4f7f8;
+  --global-text-color: #0f1a1e;
+  --global-text-color-light: #56666b;
+  --global-theme-color: #0a7c72;
+  --global-hover-color: #075e57;
   --global-hover-text-color: #ffffff;
-  --global-divider-color: rgba(31, 35, 40, 0.12);
-  --global-code-bg-color: rgba(179, 64, 42, 0.06);
-  --global-footer-bg-color: #faf8f3;
-  --global-footer-text-color: #6b6a65;
-  --global-footer-link-color: #1f2328;
+  --global-divider-color: rgba(15, 26, 30, 0.1);
+  --global-code-bg-color: rgba(10, 124, 114, 0.07);
+  --global-footer-bg-color: #ffffff;
+  --global-footer-text-color: #56666b;
+  --global-footer-link-color: #0f1a1e;
 }
 
 html[data-theme="dark"] {
-  --cl-accent-soft: rgba(232, 128, 106, 0.08);
-  --cl-accent-line: rgba(232, 128, 106, 0.4);
-  --cl-selection: rgba(232, 128, 106, 0.25);
-  --cl-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 28px rgba(0, 0, 0, 0.35);
+  --cl-panel: #11181d;
+  --cl-panel-border: rgba(46, 230, 214, 0.1);
+  --cl-accent-soft: rgba(46, 230, 214, 0.1);
+  --cl-accent-line: rgba(46, 230, 214, 0.45);
+  --cl-selection: rgba(46, 230, 214, 0.25);
+  --cl-lift: 0 0 0 1px rgba(46, 230, 214, 0.35), 0 0 28px rgba(46, 230, 214, 0.12);
 
-  --global-bg-color: #141518;
-  --global-card-bg-color: #1b1d21;
-  --global-text-color: #e7e3da;
-  --global-text-color-light: #9b978e;
-  --global-theme-color: #e8806a;
-  --global-hover-color: #f09a86;
-  --global-hover-text-color: #141518;
-  --global-divider-color: rgba(231, 227, 218, 0.14);
-  --global-code-bg-color: #23262b;
-  --global-footer-bg-color: #141518;
-  --global-footer-text-color: #9b978e;
-  --global-footer-link-color: #e7e3da;
+  --global-bg-color: #0a0e12;
+  --global-card-bg-color: #11181d;
+  --global-text-color: #d9e4e6;
+  --global-text-color-light: #7f9297;
+  --global-theme-color: #2ee6d6;
+  --global-hover-color: #8ff5ec;
+  --global-hover-text-color: #0a0e12;
+  --global-divider-color: rgba(160, 220, 225, 0.12);
+  --global-code-bg-color: #141c22;
+  --global-footer-bg-color: #0a0e12;
+  --global-footer-text-color: #7f9297;
+  --global-footer-link-color: #d9e4e6;
 }
 
-// --- Base typography ------------------------------------------------------------
+// --- Base -----------------------------------------------------------------------
 
 body {
   font-family: var(--cl-font-sans);
@@ -60,7 +80,6 @@ body {
   background-color: var(--global-bg-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 // The theme sets body text to weight 300, which makes "bolder" render as regular.
@@ -78,91 +97,663 @@ h2,
 h3,
 h4,
 .post-title,
-.card-title,
-.navbar-brand.title {
-  font-family: var(--cl-font-serif);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+.card-title {
+  font-family: var(--cl-font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 .post-header .post-title {
-  font-size: clamp(2.1rem, 4.5vw, 2.9rem);
-  font-weight: 600;
-  line-height: 1.1;
+  font-size: clamp(2.1rem, 4.5vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.08;
   margin-bottom: 0.4rem;
+}
+
+// Terminal cursor after page titles and the hero line.
+.post-header .post-title::after,
+.hero .cursor {
+  content: "_";
+  margin-left: 0.06em;
+  color: var(--global-theme-color);
+  animation: cl-blink 1.1s steps(1) infinite;
+}
+
+@keyframes cl-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .post-header .desc {
   color: var(--global-text-color-light);
-  font-size: 1.05rem;
 }
 
-// Prose links: quiet underline in the accent colour, solid on hover.
+// Prose links: accent underline, solid on hover.
 article p a,
-.news td a,
-.post-header .desc a {
+article li a,
+.news td a {
   text-decoration: underline;
   text-decoration-color: var(--cl-accent-line);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
-  transition: text-decoration-color 0.15s ease;
 }
 
 article p a:hover,
-.news td a:hover,
-.post-header .desc a:hover {
+article li a:hover,
+.news td a:hover {
   text-decoration-color: currentColor;
 }
 
-// --- Navigation and footer ------------------------------------------------------
+// --- Navigation: compact dark top bar on small screens, full sidebar on wide ones ------
 
 #navbar {
-  background-color: var(--global-bg-color);
-  background-color: color-mix(in srgb, var(--global-bg-color) 86%, transparent);
-  backdrop-filter: saturate(1.3) blur(10px);
-  -webkit-backdrop-filter: saturate(1.3) blur(10px);
-  border-bottom: 1px solid var(--global-divider-color);
-  box-shadow: none;
+  background-color: var(--cl-sb-bg);
+  border-bottom: 1px solid var(--cl-sb-border);
+  opacity: 1;
 }
 
-#navbar .nav-link {
-  letter-spacing: 0.01em;
+#navbar .sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: 0;
 }
+
+#navbar .brand-mark {
+  width: 28px;
+  height: 28px;
+  flex: none;
+}
+
+#navbar .brand-name {
+  font-family: var(--cl-font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cl-sb-text);
+}
+
+#navbar .navbar-nav .nav-item .nav-link,
+#navbar #search-toggle,
+#navbar #light-toggle {
+  font-family: var(--cl-font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cl-sb-text);
+}
+
+#navbar .navbar-nav .nav-item .nav-link:hover,
+#navbar #search-toggle:hover,
+#navbar #light-toggle:hover {
+  color: var(--cl-sb-accent);
+}
+
+#navbar .navbar-nav .nav-item.active > .nav-link {
+  font-weight: 500;
+  color: var(--cl-sb-accent);
+}
+
+#navbar .navbar-toggler .icon-bar {
+  background-color: var(--cl-sb-text);
+}
+
+#navbar #light-toggle i,
+#navbar #light-toggle i::before,
+#navbar #light-toggle i::after,
+#navbar #search-toggle i::before {
+  color: var(--cl-sb-text);
+}
+
+#navbar .cl-identity,
+#navbar .cl-sidebar-foot {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  // progress-bar.js sets body padding-top (and the bar's top) to the navbar's height at
+  // runtime; for a full-height sidebar that would push the page below the fold.
+  body.fixed-top-nav {
+    padding-top: 0 !important;
+    padding-left: var(--cl-sidebar-w);
+  }
+
+  #navbar {
+    inset: 0 auto 0 0;
+    width: var(--cl-sidebar-w);
+    padding: 1.6rem 1.5rem 1.4rem;
+    align-items: stretch;
+    overflow-y: auto;
+    color: var(--cl-sb-text);
+    background-image: linear-gradient(var(--cl-sb-grid) 1px, transparent 1px), linear-gradient(90deg, var(--cl-sb-grid) 1px, transparent 1px);
+    background-size: 28px 28px;
+    border-bottom: none;
+    border-right: 1px solid var(--cl-sb-border);
+  }
+
+  #navbar > .container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  #navbar .cl-identity,
+  #navbar .cl-identity p,
+  #navbar .cl-sidebar-foot,
+  #navbar .cl-sidebar-foot div {
+    color: var(--cl-sb-text);
+  }
+
+  // Only the angular "L" mark stays at the top; the identity block below carries the name.
+  #navbar .brand-name {
+    display: none;
+  }
+
+  #navbar .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  #navbar .cl-identity {
+    display: block;
+    margin: 1.75rem 0 1.5rem;
+  }
+
+  // Photo in a gradient ring with a soft cyan glow.
+  #navbar .cl-avatar {
+    width: 112px;
+    height: 112px;
+    padding: 3px;
+    margin-bottom: 1.1rem;
+    border-radius: 50%;
+    background: var(--cl-gradient);
+    box-shadow: 0 0 28px rgba(46, 230, 214, 0.25);
+  }
+
+  #navbar .cl-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% 22%;
+    border: 3px solid var(--cl-sb-bg);
+    border-radius: 50%;
+  }
+
+  #navbar .cl-name {
+    margin: 0;
+    font-family: var(--cl-font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  #navbar .cl-role {
+    margin: 0.3rem 0 0;
+    font-size: 0.92rem;
+  }
+
+  #navbar .cl-tagline {
+    margin: 0.2rem 0 0;
+    font-family: var(--cl-font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--cl-sb-accent);
+  }
+
+  // Vertical menu: numbered rows, active row marked with an accent bar and glow.
+  #navbar .navbar-collapse-main {
+    display: block !important;
+    flex: none;
+    text-align: left;
+    padding-top: 1rem;
+    border-top: 1px solid var(--cl-sb-border);
+  }
+
+  #navbar .navbar-menu-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 0;
+    counter-reset: cl-nav;
+  }
+
+  #navbar .navbar-menu-list > .nav-item {
+    flex: 0 0 100%;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:has(#search-toggle),
+  #navbar .navbar-menu-list > .toggle-container {
+    flex: 0 0 auto;
+    margin: 0.9rem 1rem 0 0.75rem;
+  }
+
+  #navbar .navbar-nav .nav-item .nav-link {
+    padding: 0.55rem 0.75rem;
+    border-left: 2px solid transparent;
+    border-radius: 0 6px 6px 0;
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  #navbar .navbar-menu-list > .nav-item:not(:has(#search-toggle)) > .nav-link::before {
+    counter-increment: cl-nav;
+    content: counter(cl-nav, decimal-leading-zero);
+    margin-right: 0.9rem;
+    color: var(--cl-sb-muted);
+  }
+
+  #navbar .navbar-nav .nav-item .nav-link:hover {
+    background-color: rgba(46, 230, 214, 0.06);
+  }
+
+  #navbar .navbar-nav .nav-item.active > .nav-link {
+    border-left-color: var(--cl-sb-accent);
+    background-color: rgba(46, 230, 214, 0.1);
+    text-shadow: 0 0 12px rgba(46, 230, 214, 0.45);
+  }
+
+  #navbar .navbar-nav .nav-item.active > .nav-link::before {
+    color: var(--cl-sb-accent);
+  }
+
+  #navbar #light-toggle {
+    transform: none;
+  }
+
+  #navbar .cl-sidebar-foot {
+    display: block;
+    margin-top: auto;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--cl-sb-border);
+  }
+
+  #navbar .cl-social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.9rem;
+  }
+
+  #navbar .cl-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    background-color: var(--cl-sb-tile);
+    border: 1px solid var(--cl-sb-border);
+    border-radius: var(--cl-radius-sm);
+    transition:
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
+  }
+
+  #navbar .cl-social a i::before {
+    color: var(--cl-sb-text);
+  }
+
+  #navbar .cl-social a:hover {
+    text-decoration: none;
+    border-color: var(--cl-sb-accent);
+    box-shadow: 0 0 14px rgba(46, 230, 214, 0.3);
+  }
+
+  #navbar .cl-social a:hover i::before {
+    color: var(--cl-sb-accent);
+  }
+
+  #navbar .cl-meta,
+  #navbar .cl-status,
+  #navbar .cl-quote {
+    color: var(--cl-sb-muted);
+  }
+
+  #navbar .cl-meta {
+    margin: 0;
+    font-family: var(--cl-font-mono);
+    font-size: 0.7rem;
+    line-height: 1.7;
+  }
+
+  #navbar .cl-meta span {
+    color: inherit;
+  }
+
+  #navbar .cl-meta strong {
+    font-weight: 500;
+    color: var(--cl-sb-text);
+  }
+
+  #navbar .cl-status {
+    margin: 0.8rem 0 0;
+    font-family: var(--cl-font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  #navbar .status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--cl-sb-accent);
+    box-shadow: 0 0 8px var(--cl-sb-accent);
+    animation: cl-pulse 2.4s ease-in-out infinite;
+  }
+
+  #navbar .cl-quote {
+    margin: 0.8rem 0 0;
+    padding-left: 0.75rem;
+    font-size: 0.78rem;
+    font-style: italic;
+    line-height: 1.5;
+    border-left: 2px solid var(--cl-sb-accent);
+  }
+
+  progress,
+  .progress-container {
+    top: 0 !important;
+    left: var(--cl-sidebar-w);
+    width: calc(100% - var(--cl-sidebar-w));
+  }
+
+  footer.fixed-bottom {
+    left: var(--cl-sidebar-w);
+  }
+
+  // The sidebar carries the photo, so the about page drops its own copy.
+  .post > article > .profile {
+    display: none;
+  }
+
+  .post-header {
+    margin-top: 2rem;
+  }
+}
+
+@keyframes cl-pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+// The about page's name header duplicates the sidebar / top bar brand.
+.post:has(> article > .profile) > .post-header {
+  display: none;
+}
+
+// Small screens: the about photo becomes a compact row (round photo + affiliation) above
+// the hero instead of a float that squeezes it.
+@media (max-width: 991.98px) {
+  .post > article > .profile.float-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    float: none;
+    width: auto;
+    margin: 1.25rem 0 0;
+  }
+
+  .post > article > .profile figure {
+    flex: none;
+    width: 88px;
+    margin: 0;
+  }
+
+  .post > article > .profile img {
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 58% 22%;
+    border-radius: 50%;
+  }
+
+  .post > article > .profile .more-info {
+    margin: 0;
+    font-family: var(--cl-font-mono);
+    font-size: 0.75rem;
+    color: var(--global-text-color-light);
+  }
+
+  .post > article > .profile .more-info p {
+    display: block;
+    margin: 0;
+    color: inherit;
+  }
+}
+
+// --- Footer -------------------------------------------------------------------------
 
 footer.fixed-bottom,
 footer.sticky-bottom {
+  font-size: 0.7rem;
   background-color: var(--global-bg-color);
-  background-color: color-mix(in srgb, var(--global-bg-color) 90%, transparent);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
   border-top: 1px solid var(--global-divider-color);
 }
 
-// --- About page -----------------------------------------------------------------
+// --- About page: hero -----------------------------------------------------------------
 
-// Section labels ("news", "selected publications", project categories, publication years):
-// small mono caps over a hairline.
-.post > article > h2,
-.projects h2.category,
-.publications h2.bibliography {
+.hero {
+  margin: 1.5rem 0 2.25rem;
+}
+
+.hero-kicker {
+  margin-bottom: 0.4rem;
   font-family: var(--cl-font-mono);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--global-text-color-light);
-  border-top: 1px solid var(--global-divider-color);
-  padding-top: 1.1rem;
-  margin-top: 2.75rem;
-  margin-bottom: 1rem;
-  text-align: left;
+  font-size: 0.82rem;
+  color: var(--global-theme-color) !important;
 }
 
-.projects h2.category {
-  border-top: none;
-  border-bottom: 1px solid var(--global-divider-color);
-  padding-top: 0;
-  padding-bottom: 0.6rem;
+.hero-title {
+  text-wrap: balance;
+  margin-bottom: 1.25rem;
+  font-family: var(--cl-font-display);
+  font-size: clamp(2rem, 4.3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hero-pills .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.95rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--global-theme-color);
+  text-decoration: none;
+  background-color: var(--cl-accent-soft);
+  border-radius: 999px;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.hero-pills .pill i::before {
+  color: inherit;
+}
+
+.hero-pills .pill:hover {
+  color: var(--global-hover-text-color);
+  text-decoration: none;
+  background-color: var(--global-theme-color);
+  box-shadow: var(--cl-lift);
+}
+
+// Outlined pill with a gradient border.
+.hero-pills .pill-outline {
+  border: 1.5px solid transparent;
+  background:
+    linear-gradient(var(--global-bg-color), var(--global-bg-color)) padding-box,
+    var(--cl-gradient) border-box;
+}
+
+.hero-pills .pill-outline:hover {
+  color: var(--global-theme-color);
+  background:
+    linear-gradient(var(--cl-panel), var(--cl-panel)) padding-box,
+    var(--cl-gradient) border-box;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 576px) {
+  .stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.stat {
+  padding: 0.9rem 1.1rem;
+  background-color: var(--cl-panel);
+  border: 1px solid var(--cl-panel-border);
+  border-radius: var(--cl-radius);
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--cl-font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--global-text-color);
+}
+
+.stat-label,
+.stats-source {
+  font-family: var(--cl-font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--global-text-color-light) !important;
+}
+
+.stat-label {
+  text-transform: uppercase;
+}
+
+.stats-source {
+  margin: 0.5rem 0 0;
+}
+
+// --- About page: research feature cards ----------------------------------------------
+
+.features {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .features {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.feature {
+  padding: 1.25rem 1.25rem 0.75rem;
+  background-color: var(--cl-panel);
+  border: 1px solid var(--cl-panel-border);
+  border-radius: var(--cl-radius);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.feature:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--cl-lift);
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 0.85rem;
+  font-size: 1.05rem;
+  background-color: var(--cl-accent-soft);
+  border-radius: 10px;
+}
+
+.feature-icon::before {
+  color: var(--global-theme-color);
+}
+
+.feature h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.08rem;
+  line-height: 1.3;
+}
+
+.feature .accent {
+  color: var(--global-theme-color);
+}
+
+.feature ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+
+.feature li {
+  margin-bottom: 0.4rem;
+}
+
+// --- Modules: news, selected publications, values ------------------------------------
+
+.post > article > .news,
+.post > article > .publications {
+  padding: 0.6rem 1.25rem;
+  background-color: var(--cl-panel);
+  border: 1px solid var(--cl-panel-border);
+  border-radius: var(--cl-radius);
+}
+
+.post > article > .publications {
+  padding-top: 1.1rem;
+}
+
+// Section headings on the about page: "// News", "// Selected publications".
+.post > article > h2 {
+  margin: 2.5rem 0 0.9rem;
+  font-size: 1.4rem;
+}
+
+.post > article > h2 {
+  text-transform: capitalize;
+}
+
+.post > article > h2::before {
+  content: "// ";
+  font-family: var(--cl-font-mono);
+  font-size: 0.85em;
+  color: var(--global-theme-color);
 }
 
 .post > article > h2 a {
@@ -174,121 +765,157 @@ footer.sticky-bottom {
   text-decoration: none;
 }
 
-.profile img {
-  border-radius: var(--cl-radius);
-  box-shadow: var(--cl-shadow);
-}
-
-.profile .more-info {
+// Small mono labels: project categories and publication years.
+.projects h2.category,
+.publications h2.bibliography {
+  margin: 2.25rem 0 0.9rem;
+  padding: 0;
   font-family: var(--cl-font-mono);
-  font-size: 0.78rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  text-align: left;
   color: var(--global-text-color-light);
-  margin-top: 0.75rem;
+  border: none;
 }
 
-.profile .more-info p {
-  display: block;
-  color: inherit;
+.projects h2.category::before {
+  content: "// ";
+  color: var(--global-theme-color);
+}
+
+.post > article > .publications h2.bibliography:first-child {
+  margin-top: 0.4rem;
+}
+
+.news table {
+  margin-bottom: 0;
 }
 
 .news table th {
   font-family: var(--cl-font-mono);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  color: var(--global-text-color-light);
+  color: var(--global-theme-color);
   white-space: nowrap;
   vertical-align: top;
-  padding-top: 0.6rem;
+  padding-top: 0.7rem;
   padding-right: 1.25rem;
 }
 
 .news table td {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
 }
 
-// "What I value" block, signed with the name seal.
+.news table tr + tr {
+  border-top: 1px solid var(--global-divider-color);
+}
+
+// "What I value": card with a gradient border.
 .values {
-  margin: 2.25rem 0 0.5rem;
-  padding: 1.25rem 1.5rem 0.9rem;
-  border-left: 3px solid var(--global-theme-color);
-  border-radius: 0 var(--cl-radius) var(--cl-radius) 0;
-  background-color: var(--cl-accent-soft);
+  margin: 2rem 0 0.5rem;
+  padding: 1.4rem 1.5rem 0.6rem;
+  border: 1.5px solid transparent;
+  border-radius: 16px;
+  background:
+    linear-gradient(var(--global-bg-color), var(--global-bg-color)) padding-box,
+    var(--cl-gradient) border-box;
+  box-shadow: 0 10px 30px rgba(34, 211, 238, 0.08);
 }
 
 .values .values-label {
-  font-family: var(--cl-font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--global-theme-color);
   margin-bottom: 0.6rem;
+  font-family: var(--cl-font-mono);
+  font-size: 0.8rem;
+  color: var(--global-theme-color) !important;
 }
 
-.values p {
-  font-family: var(--cl-font-serif);
-  font-size: 1.08rem;
-  line-height: 1.65;
-}
-
-.values .values-sign {
-  margin: -0.4rem 0 0;
-}
-
-.values .seal {
-  display: block;
-  width: 34px;
-  height: 34px;
-  margin-left: auto;
-  transform: rotate(-4deg);
+.values .values-label::before {
+  content: "// ";
 }
 
 // --- Publications ------------------------------------------------------------------
 
 .publications ol.bibliography li .title {
-  font-family: var(--cl-font-serif);
+  font-family: var(--cl-font-display);
   font-size: 1.04rem;
   font-weight: 600;
 }
 
-.publications ol.bibliography li .abbr abbr {
+// One monochrome style for venue badges instead of per-venue colours.
+.publications ol.bibliography li .abbr abbr.badge {
   font-family: var(--cl-font-mono);
   font-weight: 500;
-  letter-spacing: 0.03em;
-  border-radius: 6px;
+  letter-spacing: 0.04em;
+  color: var(--global-theme-color) !important;
+  background-color: transparent !important;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 999px;
 }
 
-// --- Project cards -----------------------------------------------------------------
+.publications ol.bibliography li .abbr abbr.badge a {
+  color: inherit;
+}
+
+.publications ol.bibliography li .links a.btn {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--global-text-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.publications ol.bibliography li .links a.btn:hover {
+  color: var(--global-theme-color);
+  text-decoration: none;
+  border-color: var(--global-theme-color);
+}
+
+// --- Cards: projects and CV ----------------------------------------------------------
+
+.projects .card,
+.cv .card {
+  background-color: var(--cl-panel);
+  border: 1px solid var(--cl-panel-border);
+  border-radius: var(--cl-radius);
+  box-shadow: none;
+}
 
 .projects .card {
   overflow: hidden;
-  background-color: var(--global-card-bg-color);
-  border: 1px solid var(--global-divider-color);
-  border-radius: var(--cl-radius);
-  box-shadow: none;
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .projects .card:hover {
-  transform: translateY(-2px);
-  border-color: var(--cl-accent-line);
-  box-shadow: var(--cl-shadow);
+  transform: translateY(-3px);
+  box-shadow: var(--cl-lift);
 }
 
 .projects .card .card-img-top {
-  border-bottom: 1px solid var(--global-divider-color);
   background-color: #ffffff;
+  border-bottom: 1px solid var(--global-divider-color);
 }
 
 .projects .card .card-title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .post-header .post-title::after,
+  .hero .cursor,
+  #navbar .status-dot {
+    animation: none;
+  }
+
+  .feature,
+  .feature:hover,
   .projects .card,
   .projects .card:hover {
     transition: none;
