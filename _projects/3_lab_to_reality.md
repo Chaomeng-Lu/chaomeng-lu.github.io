@@ -23,8 +23,8 @@ How well do vulnerability detectors that score highly on benchmarks work in prac
 - Compares models across multiple benchmark datasets under a common, reproducible setup.
 - Tests real-world effectiveness on **recently disclosed Linux kernel and Chromium vulnerabilities**.
 
-Accepted in the _Journal of Systems and Software_ (JSS), 2026.
+Published in the _Journal of Systems and Software_ (JSS), vol. 245, 2027. The final version is free to read until January 2, 2027 via [this link](https://authors.elsevier.com/a/1o6FkbKHpO4RS).
 
-[Code on GitHub](https://github.com/Chaomeng-Lu/A-Practical-Evaluation-of-Deep-Learning-Models-and-LLMs-for-Vulnerability-Detection) · [Paper (arXiv)](https://arxiv.org/abs/2512.10485)
+[Code on GitHub](https://github.com/Chaomeng-Lu/A-Practical-Evaluation-of-Deep-Learning-Models-and-LLMs-for-Vulnerability-Detection) · [Paper (JSS)](https://doi.org/10.1016/j.jss.2026.113185) · [Preprint (arXiv)](https://arxiv.org/abs/2512.10485)
 
 {% cite lu2026labtoreality %}

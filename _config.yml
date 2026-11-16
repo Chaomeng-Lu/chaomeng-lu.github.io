@@ -12,6 +12,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
+  <img class="cl-visits" src="https://hits.sh/chaomeng-lu.github.io.svg?view=total&style=flat-square&label=visits&color=0a7c72&labelColor=11181d" alt="Total page views" height="16">
 keywords: Chaomeng Lu, vulnerability detection, software security, deep learning, large language models, code models, KU Leuven, DistriNet
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.svg # angular "L" mark (vector); an emoji such as 🛡️ is also accepted

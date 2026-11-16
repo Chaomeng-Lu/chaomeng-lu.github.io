@@ -82,11 +82,12 @@ cv:
         authors:
           - "**Chaomeng Lu**"
           - Bert Lagaisse
-        publisher: Journal of Systems and Software (accepted)
-        journal: Journal of Systems and Software (accepted)
-        date: 2026
-        releaseDate: 2026
-        url: https://arxiv.org/abs/2512.10485
+        publisher: Journal of Systems and Software, vol. 245, 113185
+        journal: Journal of Systems and Software, vol. 245, 113185
+        date: 2027-03
+        releaseDate: 2027-03
+        doi: 10.1016/j.jss.2026.113185
+        url: https://doi.org/10.1016/j.jss.2026.113185
         summary: "**Chaomeng Lu**, Bert Lagaisse"
       - title: A Comparative Analysis of Vulnerability Management in Machine Learning Projects
         authors:

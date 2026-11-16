@@ -64,7 +64,7 @@ I am a PhD researcher in Computer Science at **KU Leuven** ([DistriNet](https://
     <ul>
       <li>Deep learning models and open-weight LLMs</li>
       <li>Newly disclosed Linux kernel and Chromium vulnerabilities</li>
-      <li><a href="{{ '/projects/3_lab_to_reality/' | relative_url }}">From Lab to Reality</a>, JSS 2026</li>
+      <li><a href="{{ '/projects/3_lab_to_reality/' | relative_url }}">From Lab to Reality</a>, JSS 2027</li>
     </ul>
   </div>
 </section>

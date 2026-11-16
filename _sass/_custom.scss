@@ -541,6 +541,15 @@ footer.sticky-bottom {
   border-top: 1px solid var(--global-divider-color);
 }
 
+// Page-view counter badge (hits.sh) at the end of the footer text.
+.cl-visits {
+  display: inline-block;
+  height: 16px;
+  margin-left: 0.35rem;
+  vertical-align: -3px;
+  border-radius: 3px;
+}
+
 // --- About page: hero -----------------------------------------------------------------
 
 .hero {
@@ -823,6 +832,17 @@ footer.sticky-bottom {
   transition:
     color 0.15s ease,
     border-color 0.15s ease;
+}
+
+// An Elsevier Share Link (free access to the final version) is stored in the entry's
+// `html` field; label its button "Free access" instead of "HTML".
+.publications ol.bibliography li .links a.btn[href^="https://authors.elsevier.com/a/"] {
+  font-size: 0;
+}
+
+.publications ol.bibliography li .links a.btn[href^="https://authors.elsevier.com/a/"]::after {
+  content: "Free access";
+  font-size: 0.72rem;
 }
 
 .publications ol.bibliography li .links a.btn:hover {
