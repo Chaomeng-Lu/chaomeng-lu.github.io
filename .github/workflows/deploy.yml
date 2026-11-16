@@ -60,10 +60,17 @@ on:
 permissions:
   contents: write
 
+# Back-to-back pushes: build only the newest commit instead of queueing every one.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
+    # A normal deploy takes ~2 minutes; fail fast instead of hanging on a stalled step.
+    timeout-minutes: 15
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
